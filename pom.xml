@@ -4,16 +4,16 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.springframework</groupId>
-	<artifactId>horon</artifactId>
+	<artifactId>maliclothing</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<packaging>pom</packaging>
-	<name>horon</name>
+	<name>maliclothing</name>
 	<description>a project for an employment focused website</description>
 
 	<modules>
-		<module>horon-ws</module>
-		<module>horon-ui</module>
+		<module>maliclothing-ws</module>
+		<module>maliclothing-ui</module>
 	</modules>
 
 </project>

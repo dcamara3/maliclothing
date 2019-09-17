@@ -4,10 +4,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.mandedev.com</groupId>
-	<artifactId>horon-ui</artifactId>
+	<artifactId>maliclothing-ui</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>horon-ui</name>
+	<name>maliclothing-ui</name>
 	<description>The UI for the project</description>
 
 	<properties>
@@ -47,7 +47,7 @@
 								<argument>build</argument>
 								<argument>--prod</argument>
 								<argument>--base-href</argument>
-								<argument>/horon/</argument>
+								<argument>/maliclothing/</argument>
 							</arguments>
 						</configuration>
 					</execution>
@@ -71,37 +71,37 @@
 
 				<configuration>
 					<!-- <license>GPL (c) 2005, SWWDC</license> -->
-					<distribution>MandeDev horon UI</distribution>
+					<distribution>MandeDev maliclothing UI</distribution>
 					<group>Application/UI</group>
 
 					<mappings>
 
 						<mapping>
-							<directory>/usr/share/nginx/html/horon</directory>
+							<directory>/usr/share/nginx/html/maliclothing</directory>
 							<dirmode>755</dirmode>
 						</mapping>
 
 						<!-- <mapping>
-							<directory>/usr/share/nginx/html/horon/assets</directory>
+							<directory>/usr/share/nginx/html/maliclothing/assets</directory>
 							<dirmode>755</dirmode>
 						</mapping> -->
 
 						<mapping>
-							<directory>/usr/share/nginx/html/horon</directory>
+							<directory>/usr/share/nginx/html/maliclothing</directory>
 							<filemode>755</filemode>
 							<sources>
 								<source>
-									<location>dist/horon-ui</location>
+									<location>dist/maliclothing-ui</location>
 								</source>
 							</sources>
 						</mapping>
 
 						<!-- <mapping>
-							<directory>/usr/share/nginx/html/horon/assets</directory>
+							<directory>/usr/share/nginx/html/maliclothing/assets</directory>
 							<filemode>755</filemode>
 							<sources>
 								<source>
-									<location>horon-ui/dist/horon-ui/assets</location>
+									<location>maliclothing-ui/dist/maliclothing-ui/assets</location>
 								</source>
 							</sources>
 						</mapping> -->

@@ -13,11 +13,11 @@
 	</parent>
 
 	<groupId>org.mandedev.com</groupId>
-	<artifactId>horon-ws</artifactId>
+	<artifactId>maliclothing-ws</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>horon-ws</name>
+	<name>maliclothing-ws</name>
 	<description>A Web service for the employment focused website</description>
 
 	<properties>
@@ -113,7 +113,7 @@
 	</dependencyManagement>
 
 	<build>
-		<finalName>horon</finalName>
+		<finalName>maliclothing</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -136,22 +136,22 @@
 
 				<configuration>
 					<!-- <license>GPL (c) 2005, SWWDC</license> -->
-					<distribution>MandeDev horon UI</distribution>
+					<distribution>MandeDev maliclothing UI</distribution>
 					<group>Application/UI</group>
 
 					<mappings>
 
 						<mapping>
-							<directory>/opt/tomcat/horon</directory>
+							<directory>/opt/tomcat/maliclothing</directory>
 							<dirmode>755</dirmode>
 						</mapping>
 
 						<mapping>
-							<directory>/opt/tomcat/horon</directory>
+							<directory>/opt/tomcat/maliclothing</directory>
 							<filemode>755</filemode>
 							<sources>
 								<source>
-									<location>target/horon.jar</location>
+									<location>target/maliclothing.jar</location>
 								</source>
 							</sources>
 						</mapping>
@@ -161,7 +161,7 @@
 							<filemode>755</filemode>
 							<sources>
 								<source>
-									<location>scripts/horon.service</location>
+									<location>scripts/maliclothing.service</location>
 								</source>
 							</sources>
 						</mapping>
