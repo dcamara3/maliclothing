@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('horon-ui app is running!');
+    expect(page.getTitleText()).toEqual('maliclothing-ui app is running!');
   });
 
   afterEach(async () => {
