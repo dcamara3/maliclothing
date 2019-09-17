@@ -22,23 +22,25 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-horon-ws/target/
-horon-ui/target/
+maliclothing-ws/target/
+maliclothing-ui/target/
 
 .settings/
 
-horon-ws/.factorypath
+maliclothing-ws/.factorypath
 
 .project
 
-horon-ui/.classpath
-horon-ws/.classpath
+maliclothing-ui/.classpath
+maliclothing-ws/.classpath
 
-horon-ui/.settings/*
-horon-ws/.settings/*
+maliclothing-ui/.settings/*
+maliclothing-ws/.settings/*
 
-horon-ui/node_modules
+maliclothing-ui/node_modules/
 
-horon-ui/dist/
+maliclothing-ui/dist/
 
 .attach_pid*
+
+.idea/*
