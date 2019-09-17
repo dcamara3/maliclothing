@@ -21,3 +21,24 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+horon-ws/target/
+horon-ui/target/
+
+.settings/
+
+horon-ws/.factorypath
+
+.project
+
+horon-ui/.classpath
+horon-ws/.classpath
+
+horon-ui/.settings/*
+horon-ws/.settings/*
+
+horon-ui/node_modules
+
+horon-ui/dist/
+
+.attach_pid*

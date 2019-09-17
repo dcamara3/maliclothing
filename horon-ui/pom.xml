@@ -1,0 +1,123 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.mandedev.com</groupId>
+	<artifactId>horon-ui</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>horon-ui</name>
+	<description>The UI for the project</description>
+
+	<properties>
+	  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.6.0</version>
+				<executions>
+					<execution>
+						<id>npm-install</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>npm</executable>
+							<arguments>
+								<argument>install</argument>
+							</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<id>build-angular-project</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>ng</executable>
+							<!-- <workingDirectory>${basedir}</workingDirectory> -->
+							<arguments>
+								<argument>build</argument>
+								<argument>--prod</argument>
+								<argument>--base-href</argument>
+								<argument>/horon/</argument>
+							</arguments>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- https://www.mojohaus.org/rpm-maven-plugin/example1.html -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>rpm-maven-plugin</artifactId>
+				<version>2.2.0</version>
+				<executions>
+					<execution>
+						<id>generate-rpm</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>rpm</goal>
+						</goals>
+					</execution>
+				</executions>
+
+				<configuration>
+					<!-- <license>GPL (c) 2005, SWWDC</license> -->
+					<distribution>MandeDev horon UI</distribution>
+					<group>Application/UI</group>
+
+					<mappings>
+
+						<mapping>
+							<directory>/usr/share/nginx/html/horon</directory>
+							<dirmode>755</dirmode>
+						</mapping>
+
+						<!-- <mapping>
+							<directory>/usr/share/nginx/html/horon/assets</directory>
+							<dirmode>755</dirmode>
+						</mapping> -->
+
+						<mapping>
+							<directory>/usr/share/nginx/html/horon</directory>
+							<filemode>755</filemode>
+							<sources>
+								<source>
+									<location>dist/horon-ui</location>
+								</source>
+							</sources>
+						</mapping>
+
+						<!-- <mapping>
+							<directory>/usr/share/nginx/html/horon/assets</directory>
+							<filemode>755</filemode>
+							<sources>
+								<source>
+									<location>horon-ui/dist/horon-ui/assets</location>
+								</source>
+							</sources>
+						</mapping> -->
+
+					</mappings>
+					<preinstallScriptlet>
+						<script>echo "installing ${project.name} now"</script>
+					</preinstallScriptlet>
+					<!-- <postinstallScriptlet> <scriptFile>src/main/scripts/postinstall</scriptFile> 
+						<fileEncoding>utf-8</fileEncoding> <filter>true</filter> </postinstallScriptlet> 
+						<preremoveScriptlet> <scriptFile>src/main/scripts/preremove</scriptFile> 
+						<fileEncoding>utf-8</fileEncoding> </preremoveScriptlet> -->
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>
