@@ -55,7 +55,7 @@
 			</plugin>
 
 			<!-- https://www.mojohaus.org/rpm-maven-plugin/example1.html -->
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>rpm-maven-plugin</artifactId>
 				<version>2.2.0</version>
@@ -70,7 +70,7 @@
 				</executions>
 
 				<configuration>
-					<!-- <license>GPL (c) 2005, SWWDC</license> -->
+					<license>GPL (c) 2005, SWWDC</license>
 					<distribution>MandeDev maliclothing UI</distribution>
 					<group>Application/UI</group>
 
@@ -81,10 +81,10 @@
 							<dirmode>755</dirmode>
 						</mapping>
 
-						<!-- <mapping>
+						<mapping>
 							<directory>/usr/share/nginx/html/maliclothing/assets</directory>
 							<dirmode>755</dirmode>
-						</mapping> -->
+						</mapping>
 
 						<mapping>
 							<directory>/usr/share/nginx/html/maliclothing</directory>
@@ -96,7 +96,7 @@
 							</sources>
 						</mapping>
 
-						<!-- <mapping>
+						<mapping>
 							<directory>/usr/share/nginx/html/maliclothing/assets</directory>
 							<filemode>755</filemode>
 							<sources>
@@ -104,18 +104,18 @@
 									<location>maliclothing-ui/dist/maliclothing-ui/assets</location>
 								</source>
 							</sources>
-						</mapping> -->
+						</mapping>
 
 					</mappings>
 					<preinstallScriptlet>
 						<script>echo "installing ${project.name} now"</script>
 					</preinstallScriptlet>
-					<!-- <postinstallScriptlet> <scriptFile>src/main/scripts/postinstall</scriptFile> 
+					<postinstallScriptlet> <scriptFile>src/main/scripts/postinstall</scriptFile> 
 						<fileEncoding>utf-8</fileEncoding> <filter>true</filter> </postinstallScriptlet> 
 						<preremoveScriptlet> <scriptFile>src/main/scripts/preremove</scriptFile> 
-						<fileEncoding>utf-8</fileEncoding> </preremoveScriptlet> -->
+						<fileEncoding>utf-8</fileEncoding> </preremoveScriptlet>
 				</configuration>
-			</plugin>
+			</plugin> -->
 
 		</plugins>
 	</build>
