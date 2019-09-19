@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HoronUiApplication {
+public class MaliClothingWSApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HoronUiApplication.class, args);
+		SpringApplication.run(MaliClothingWSApplication.class, args);
 	}
 
 }
