@@ -15,6 +15,8 @@
  */
 package org.mandedev.com.config;
 
+import java.util.Properties;
+
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
@@ -52,7 +54,7 @@ public class InfrastructureConfig {
 	@Bean
 	public DataSource dataSource() {
 		EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
-		return builder.setType(EmbeddedDatabaseType.HSQL).build();
+		return builder.setType(EmbeddedDatabaseType.H2).build();
 	}
 
 	/**
@@ -65,13 +67,24 @@ public class InfrastructureConfig {
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 
 		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-		vendorAdapter.setDatabase(Database.HSQL);
+		vendorAdapter.setDatabase(Database.H2);
 		vendorAdapter.setGenerateDdl(true);
 
 		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
 		factory.setJpaVendorAdapter(vendorAdapter);
+
 		factory.setPackagesToScan(getClass().getPackage().getName());
+//		factory.setPackagesToScan(new String[] { "org.mandedev.com.entity" });
+
 		factory.setDataSource(dataSource());
+
+		Properties props = new Properties();
+		props.setProperty("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
+		props.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+		props.setProperty("hibernate.show_sql", "true");
+		props.setProperty("hibernate.format_sql", "true");
+		
+		factory.setJpaProperties(props);
 
 		return factory;
 	}

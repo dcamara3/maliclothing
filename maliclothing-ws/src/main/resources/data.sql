@@ -1,13 +1,31 @@
-DROP TABLE IF EXISTS billionaires;
- 
-CREATE TABLE billionaires (
-  id INT AUTO_INCREMENT  PRIMARY KEY,
-  first_name VARCHAR(250) NOT NULL,
-  last_name VARCHAR(250) NOT NULL,
-  career VARCHAR(250) DEFAULT NULL
+drop table address if exists;
+create table address (
+   id bigint not null,
+    city varchar(255),
+    country varchar(255),
+    street varchar(255),
+    customer_id bigint,
+    primary key (id)
 );
- 
-INSERT INTO billionaires (first_name, last_name, career) VALUES
-  ('Aliko', 'Dangote', 'Billionaire Industrialist'),
-  ('Bill', 'Gates', 'Billionaire Tech Entrepreneur'),
-  ('Folrunsho', 'Alakija', 'Billionaire Oil Magnate');
+
+INSERT INTO address (id, customer_id, street, city, country) VALUES
+  (1, 100, '5553 walton ave', 'Philly', 'USA'),
+  (2, 200, '5... Vodges st', 'Philly', 'USA');
+    
+drop table customer if exists;
+create table customer (
+   id bigint not null,
+    email varchar(255),
+    firstname varchar(255),
+    lastname varchar(255),
+    primary key (id)
+);
+
+INSERT INTO customer (id, email, firstname, lastname) VALUES
+  (100, 'dcamara3@gmail.com', 'Daman', 'Camara'),
+  (200, 'Dyoussouf12@gmail.com ', 'Youssouf', 'Diarra');
+
+alter table address 
+   add constraint FK93c3js0e22ll1xlu21nvrhqgg 
+   foreign key (customer_id) 
+   references customer;

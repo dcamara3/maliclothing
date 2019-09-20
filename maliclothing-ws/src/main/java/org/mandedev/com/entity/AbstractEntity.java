@@ -35,7 +35,7 @@ public class AbstractEntity {
 	public Long getId() {
 		return id;
 	}
-
+	
 	/* 
 	 * (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)

@@ -23,7 +23,7 @@ import org.springframework.context.annotation.Import;
 
 /**
  * JavaConfig class to activate component scanning to pick up
- * {@link org.mandedev.com.dao.oreilly.springdata.jpa.core.JpaCustomerRepository}. Re-uses the common infrastructure configuration
+ * {@link org.mandedev.com.entity.oreilly.springdata.jpa.core.JpaCustomerRepository}. Re-uses the common infrastructure configuration
  * defined in {@link InfrastructureConfig}.
  */
 @Configuration

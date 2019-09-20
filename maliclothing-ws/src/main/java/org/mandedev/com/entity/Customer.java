@@ -24,10 +24,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import org.springframework.util.Assert;
 
 @Entity
+@Table(name = "customer")
 public class Customer extends AbstractEntity {
 
 	private String firstname, lastname;
@@ -43,7 +45,7 @@ public class Customer extends AbstractEntity {
 	 * Creates a new {@link Customer} from the given firstname and lastname.
 	 * 
 	 * @param firstname must not be {@literal null} or empty.
-	 * @param lastname must not be {@literal null} or empty.
+	 * @param lastname  must not be {@literal null} or empty.
 	 */
 	public Customer(String firstname, String lastname) {
 
@@ -121,5 +123,10 @@ public class Customer extends AbstractEntity {
 	 */
 	public Set<Address> getAddresses() {
 		return Collections.unmodifiableSet(addresses);
+	}
+
+	@Override
+	public String toString() {
+		return firstname + ", " + lastname;
 	}
 }

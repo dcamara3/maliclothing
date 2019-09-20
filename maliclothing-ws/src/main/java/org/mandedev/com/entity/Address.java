@@ -16,10 +16,12 @@
 package org.mandedev.com.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 import org.springframework.util.Assert;
 
 @Entity
+@Table(name = "address")
 public class Address extends AbstractEntity {
 
 	private String street, city, country;

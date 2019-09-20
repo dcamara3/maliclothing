@@ -15,6 +15,8 @@
  */
 package org.mandedev.com.dao;
 
+import java.util.Optional;
+
 import org.mandedev.com.entity.Customer;
 import org.mandedev.com.entity.EmailAddress;
 import org.springframework.data.repository.Repository;
@@ -28,6 +30,10 @@ public interface CustomerRepository extends Repository<Customer, Long> {
 	 * @return
 	 */
 	Customer findOne(Long id);
+
+//	@Query("select c from customer c where c.id = ?1")
+//	Customer findById(Long id);
+//    public Optional<Customer> findById(Long id);
 
 	/**
 	 * Saves the given {@link Customer}.
