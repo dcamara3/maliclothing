@@ -25,11 +25,6 @@ public class RestApiController {
 	private
 	UserService userService; //Service which will do all data retrieval/manipulation work
 
-	@RequestMapping("/test")
-	String home() {
-		return "index";
-	}
-
 	@RequestMapping(value = "/user/", method = RequestMethod.GET)
 	public ResponseEntity<List<User>> listAllUsers() {
 		List<User> users = userService.findAllUsers();
