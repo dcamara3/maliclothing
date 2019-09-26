@@ -16,12 +16,12 @@ public class maliclothing {
 		SpringApplication.run(maliclothing.class, args);
 	}
 
-	public WebMvcConfigurer corsConfigurer() {
-		return new WebMvcConfigurer() {
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/maliclothing").allowedOrigins("http://localhost:4200");
-			}
-		};
-	}
+//	public WebMvcConfigurer corsConfigurer() {
+//		return new WebMvcConfigurer() {
+//			@Override
+//			public void addCorsMappings(CorsRegistry registry) {
+//				registry.addMapping("/maliclothing/product/**").allowedOrigins("http://localhost:4200");
+//			}
+//		};
+//	}
 }

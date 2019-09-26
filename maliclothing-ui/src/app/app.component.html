@@ -6,15 +6,20 @@
 
 <ul>
   <li *ngFor="let product of products">
-    <table>
-      <tr>
-        <td><img src="assets/images/jacket.jpeg" height="200"> <br/></td>
-        <td><strong>{{product.name}}</strong></td>
-      </tr>
-    </table>
+    
+    <div>
+      <table>
+        <tr>
+          <td class="thumbnail"><img src="assets/images/jacket.jpeg" height="200" /></td>
+          <td><strong>{{product.name}}</strong></td>
+        </tr>
+      </table>    
+    </div>
+  
   </li>
 </ul>
 
+<button class="alert alert-success">Test</button>
 
 <!-- <ul>
     <li *ngFor="let food of foods">{{food.name}}</li>
