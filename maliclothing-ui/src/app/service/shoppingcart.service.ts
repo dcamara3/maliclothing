@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class ShoppingCartService {
 
  public items = {};
- private numberOfItems: number = 0;
+ public numberOfItems: number = 0;
 
   constructor() { }
 

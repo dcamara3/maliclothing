@@ -15,7 +15,10 @@ export class HomeComponent {
 
   public products;
 
-  constructor(private _productService: ProductService, private _shoppingCartService: ShoppingCartService) { }
+  constructor(
+  		private _productService: ProductService, 
+  		private _shoppingCartService: ShoppingCartService
+  ) { }
 
   ngOnInit() {
     this.getProducts();
