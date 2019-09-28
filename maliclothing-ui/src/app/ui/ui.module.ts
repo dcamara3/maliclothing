@@ -6,13 +6,14 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 
 import { AppRoutingModule } from './../app-routing.module';
+import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 
 @NgModule({
   imports: [
     CommonModule,
     AppRoutingModule
   ],
-  declarations: [LayoutComponent, HeaderComponent, FooterComponent, HomeComponent],
+  declarations: [LayoutComponent, HeaderComponent, FooterComponent, HomeComponent, ShoppingcartComponent],
   exports: [LayoutComponent]
 })
 export class UiModule { }

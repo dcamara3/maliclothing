@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ShoppingCartService {
 
- private items = {};
+ public items = {};
  private numberOfItems: number = 0;
 
   constructor() { }
@@ -30,5 +30,9 @@ export class ShoppingCartService {
         this.numberOfItems--;
       }
     }
+  }
+
+  public getItems() : any {
+    return this.items;
   }
 }

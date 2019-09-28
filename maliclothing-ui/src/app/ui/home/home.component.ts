@@ -14,7 +14,6 @@ import { ShoppingCartService } from './../../service/shoppingcart.service';
 export class HomeComponent {
 
   public products;
-  // shoppingCartService: ShoppingcartService;
 
   constructor(private _productService: ProductService, private _shoppingCartService: ShoppingCartService) { }
 
@@ -32,12 +31,9 @@ export class HomeComponent {
 
   public addToCart(product: any): void {
     this._shoppingCartService.addItem(product);
-    // alert("Item: " + product.name + " successfully added!");
   }
 
   public removeFromCart(product: any): void {
     this._shoppingCartService.deleteItem(product.upcCode);
-    // alert("Item: " + product.name + " successfully removed!");
   }
-
 }
