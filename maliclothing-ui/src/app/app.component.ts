@@ -31,12 +31,12 @@ export class AppComponent {
   }
 
   public addToCart(product: any): void {
-    this._shoppingCartService.incrementCount();
+    this._shoppingCartService.addItem(product);
     // alert("Item: " + product.name + " successfully added!");
   }
 
   public removeFromCart(product: any): void {
-    this._shoppingCartService.decrementCount();
+    this._shoppingCartService.deleteItem(product.upcCode);
     // alert("Item: " + product.name + " successfully removed!");
   }
 
