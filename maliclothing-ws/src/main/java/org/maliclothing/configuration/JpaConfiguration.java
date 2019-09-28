@@ -1,4 +1,4 @@
-package com.websystique.springboot.configuration;
+package org.maliclothing.configuration;
 
 import java.util.Properties;
 

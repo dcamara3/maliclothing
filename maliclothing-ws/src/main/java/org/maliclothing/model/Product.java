@@ -1,4 +1,4 @@
-package com.websystique.springboot.model;
+package org.maliclothing.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.validator.constraints.NotEmpty;

@@ -1,8 +1,8 @@
-package com.websystique.springboot.controller;
+package org.maliclothing.controller;
 
-import com.websystique.springboot.model.Product;
-import com.websystique.springboot.repositories.ProductRepository;
-import com.websystique.springboot.util.CustomErrorType;
+import org.maliclothing.model.Product;
+import org.maliclothing.repositories.ProductRepository;
+import org.maliclothing.util.CustomErrorType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

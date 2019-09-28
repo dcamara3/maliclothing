@@ -1,4 +1,4 @@
-package com.websystique.springboot.util;
+package org.maliclothing.util;
 
 
 public class CustomErrorType {

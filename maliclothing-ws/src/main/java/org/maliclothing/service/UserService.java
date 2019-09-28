@@ -1,9 +1,9 @@
-package com.websystique.springboot.service;
+package org.maliclothing.service;
 
-
-import com.websystique.springboot.model.User;
 
 import java.util.List;
+
+import org.maliclothing.model.User;
 
 public interface UserService {
 	

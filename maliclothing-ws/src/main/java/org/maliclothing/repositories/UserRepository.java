@@ -1,6 +1,6 @@
-package com.websystique.springboot.repositories;
+package org.maliclothing.repositories;
 
-import com.websystique.springboot.model.User;
+import org.maliclothing.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,12 +1,11 @@
-package com.websystique.springboot;
+package org.maliclothing;
 
+import org.maliclothing.configuration.JpaConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
-import com.websystique.springboot.configuration.JpaConfiguration;
 
 @Import(JpaConfiguration.class)
 @SpringBootApplication(scanBasePackages = { "com.websystique.springboot" })
