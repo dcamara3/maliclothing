@@ -9,10 +9,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Import(JpaConfiguration.class)
 @SpringBootApplication(scanBasePackages = { "com.websystique.springboot" })
-public class maliclothing {
+public class Maliclothing {
 
 	public static void main(String[] args) {
-		SpringApplication.run(maliclothing.class, args);
+		SpringApplication.run(Maliclothing.class, args);
 	}
 
 //	public WebMvcConfigurer corsConfigurer() {
