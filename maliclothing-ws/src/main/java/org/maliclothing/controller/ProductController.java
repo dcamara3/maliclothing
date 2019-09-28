@@ -1,7 +1,9 @@
 package org.maliclothing.controller;
 
+import java.util.List;
+
 import org.maliclothing.model.Product;
-import org.maliclothing.repositories.ProductRepository;
+import org.maliclothing.service.ProductService;
 import org.maliclothing.util.CustomErrorType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,8 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping("/product")
@@ -25,12 +25,12 @@ public class ProductController {
 
     @Autowired
     private
-    ProductRepository productRepository;
+    ProductService productService;
 
 //    @CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value = "/all/", method = RequestMethod.GET)
     public ResponseEntity<List<Product>> listAllUsers() {
-        List<Product> products = productRepository.findAll();
+        List<Product> products = productService.findAllProducts();
         if (products.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -40,7 +40,7 @@ public class ProductController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> getProduct(@PathVariable("id") long id) {
         logger.info("Fetching User with id {}", id);
-        Product user = productRepository.getOne(id);
+        Product user = productService.findById(id);
         if (user == null) {
             logger.error("Product with id {} not found.", id);
             return new ResponseEntity<>(new CustomErrorType("Product with id " + id
