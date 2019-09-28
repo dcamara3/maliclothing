@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Import(JpaConfiguration.class)
-@SpringBootApplication(scanBasePackages = { "com.websystique.springboot" })
+@SpringBootApplication(scanBasePackages = { "org.maliclothing" })
 public class Maliclothing {
 
 	public static void main(String[] args) {
