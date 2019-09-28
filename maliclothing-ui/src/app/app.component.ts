@@ -27,16 +27,4 @@ export class AppComponent {
       () => console.log('done loading foods')
     );
   }
-
-//   +  getBooksAndMovies() {
-// +    this._demoService.getBooksAndMovies().subscribe(
-// +      data => {
-// +        this.books = data[0]
-// +        this.movies = data[1]
-// +      }
-// +      // No error or completion callbacks here. They are optional, but
-// +      // you will get console errors if the Observable is in an error state.
-// +    );
-// +  }
-
 }
