@@ -13,31 +13,31 @@ import { ShoppingCartService } from './service/shoppingcart.service';
 })
 export class AppComponent {
 
-  public products;
-  // shoppingCartService: ShoppingcartService;
+  // public products;
+  // // shoppingCartService: ShoppingcartService;
 
-  constructor(private _productService: ProductService, private _shoppingCartService: ShoppingCartService) { }
+  // constructor(private _productService: ProductService, private _shoppingCartService: ShoppingCartService) { }
 
-  ngOnInit() {
-    this.getProducts();
-  }
+  // ngOnInit() {
+  //   this.getProducts();
+  // }
 
-  getProducts() {
-    this._productService.getProducts().subscribe(
-      data => { this.products = data },
-      err => console.error(err),
-      () => console.log('done loading products')
-    );
-  }
+  // getProducts() {
+  //   this._productService.getProducts().subscribe(
+  //     data => { this.products = data },
+  //     err => console.error(err),
+  //     () => console.log('done loading products')
+  //   );
+  // }
 
-  public addToCart(product: any): void {
-    this._shoppingCartService.addItem(product);
-    // alert("Item: " + product.name + " successfully added!");
-  }
+  // public addToCart(product: any): void {
+  //   this._shoppingCartService.addItem(product);
+  //   // alert("Item: " + product.name + " successfully added!");
+  // }
 
-  public removeFromCart(product: any): void {
-    this._shoppingCartService.deleteItem(product.upcCode);
-    // alert("Item: " + product.name + " successfully removed!");
-  }
+  // public removeFromCart(product: any): void {
+  //   this._shoppingCartService.deleteItem(product.upcCode);
+  //   // alert("Item: " + product.name + " successfully removed!");
+  // }
 
 }
