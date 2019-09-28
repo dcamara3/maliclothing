@@ -1,28 +1,33 @@
-<!-- https://www.metaltoad.com/blog/angular-5-making-api-calls-httpclient-service -->
+<app-layout>
 
-<div class="container text-center">
+  <div class="jumbotron text-center">
+    <h1>Mali Clothing</h1>
+  </div>
 
-  <h2 class="jumbotron">Mali Clothing</h2>
+  <!-- https://www.metaltoad.com/blog/angular-5-making-api-calls-httpclient-service -->
+  <div class="container text-center">
 
-  <div *ngFor="let product of products" class="row text-center" id="imgRow">
+    <div *ngFor="let product of products" class="row text-center" id="imgRow">
 
-    <div>
-      <div class="thumbnail">
-        <img src="assets/images/{{product.upcCode}}.jpg">
-        <div class="caption">
-          <h4>{{product.name}}</h4>
-        </div>
-        <div class="row">
-          <div class="col-xs-3">
-            <button class="btn btn-success custom-button" (click)="addToCart(product)">Add To Cart</button>
+      <div>
+        <div class="thumbnail">
+          <img src="assets/images/{{product.upcCode}}.jpg">
+          <div class="caption">
+            <h4>{{product.name}}</h4>
           </div>
-          <div class="col-xs-9">
-            <button class="btn btn-danger custom-button" (click)="removeFromCart(product)">Remove From Cart</button>
+          <div class="row">
+            <div class="col-xs-3">
+              <button class="btn btn-success custom-button" (click)="addToCart(product)">Add To Cart</button>
+            </div>
+            <div class="col-xs-9">
+              <button class="btn btn-danger custom-button" (click)="removeFromCart(product)">Remove From Cart</button>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
 
   </div>
 
-</div>
+</app-layout>

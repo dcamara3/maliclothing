@@ -7,7 +7,8 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';  // replaces previous Http service
 import { FormsModule } from '@angular/forms';
 
-import { ProductService } from './service/product.service';   // our custom service, see below
+import { ProductService } from './service/product.service';
+import { UiModule } from './ui/ui.module';   // our custom service, see below
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ProductService } from './service/product.service';   // our custom serv
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    UiModule
   ],
   providers: [ProductService],
 
