@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ProductService } from './service/product.service';
+import { ShoppingCartService } from './service/shoppingcart.service';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +14,9 @@ import { ProductService } from './service/product.service';
 export class AppComponent {
 
   public products;
+  // shoppingCartService: ShoppingcartService;
 
-  constructor(private _productService: ProductService) { }
+  constructor(private _productService: ProductService, private _shoppingCartService: ShoppingCartService) { }
 
   ngOnInit() {
     this.getProducts();
@@ -29,12 +31,13 @@ export class AppComponent {
   }
 
   public addToCart(product: any): void {
-
-    alert("Item: " + product.name + " successfully added!");
+    this._shoppingCartService.incrementCount();
+    // alert("Item: " + product.name + " successfully added!");
   }
 
   public removeFromCart(product: any): void {
-    alert("Item: " + product.name + " successfully removed!");
+    this._shoppingCartService.decrementCount();
+    // alert("Item: " + product.name + " successfully removed!");
   }
 
 }

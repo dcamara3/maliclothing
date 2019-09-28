@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 
 import { ProductService } from './service/product.service';
 import { UiModule } from './ui/ui.module';   // our custom service, see below
+import { ShoppingCartService } from './service/shoppingcart.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { UiModule } from './ui/ui.module';   // our custom service, see below
     HttpClientModule,
     UiModule
   ],
-  providers: [ProductService],
+  providers: [ProductService, ShoppingCartService],
 
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   

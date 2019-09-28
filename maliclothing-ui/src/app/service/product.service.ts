@@ -13,7 +13,7 @@ export class ProductService {
 
     constructor(private http:HttpClient) {}
  
-    getProducts() {
+    getProducts() : any {
         return this.http.get('http://localhost:8081/maliclothing/product/all/');
     }
 }
