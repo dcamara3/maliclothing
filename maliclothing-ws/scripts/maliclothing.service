@@ -10,7 +10,7 @@ ExecStart=/usr/bin/java -jar /opt/tomcat/maliclothing/maliclothing.jar
 Restart=always
 StandardOutput=syslog
 StandardError=syslog
-SyslogIdentifier=helloworld
+SyslogIdentifier=maliclothing
 
 [Install]
 WantedBy=multi-user.target
