@@ -14,6 +14,6 @@ export class ProductService {
     constructor(private http:HttpClient) {}
  
     getProducts() : any {
-        return this.http.get('http://mande-dev.com:8081/maliclothing/product/all/');
+        return this.http.get('http://localhost:8081/maliclothing/product/all/');
     }
 }

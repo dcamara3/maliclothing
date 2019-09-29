@@ -7,6 +7,7 @@ export class ShoppingCartService {
 
  public items = {};
  public numberOfItems: number = 0;
+ public totalprice : number = 0;
 
   constructor() { }
 
@@ -34,5 +35,17 @@ export class ShoppingCartService {
 
   public getItems() : any {
     return this.items;
+  }
+
+  public getTotalAmount() : number {
+    this.totalprice = 0;
+    for(let key in this.items){
+      for(let keyitem in this.items[key]){
+
+         this.totalprice += this.items[key][keyitem].price;
+
+      }      
+    }
+    return this.totalprice ;
   }
 }
