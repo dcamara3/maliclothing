@@ -1,6 +1,6 @@
 .thumbnail img {
 	/* width: 100%; */
-	height:400px;
+	height:200px;
 }
 
 .thumbnail {
@@ -18,7 +18,6 @@
 #imgRow .thumbnail img {
 	display: flex;
 	flex-wrap: wrap;
-	height: 240px;
 }
 
 .custom-button {
