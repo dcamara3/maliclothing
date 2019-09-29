@@ -1,12 +1,12 @@
 [Unit]
-Description=Horon Web App
+Description=Mali Clothing Web App
 After=syslog.target
 After=network.target[Service]
 User=username
 Type=simple
 
 [Service]
-ExecStart=/usr/bin/java -jar /opt/tomcat/horon/horon.jar
+ExecStart=/usr/bin/java -jar /opt/tomcat/maliclothing/maliclothing.jar
 Restart=always
 StandardOutput=syslog
 StandardError=syslog
