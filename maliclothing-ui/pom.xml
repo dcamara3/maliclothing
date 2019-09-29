@@ -101,7 +101,7 @@
 							<filemode>755</filemode>
 							<sources>
 								<source>
-									<location>maliclothing-ui/dist/maliclothing-ui/assets</location>
+									<location>dist/maliclothing-ui/assets</location>
 								</source>
 							</sources>
 						</mapping>
