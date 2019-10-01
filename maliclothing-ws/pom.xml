@@ -106,7 +106,7 @@
 				</executions>
 			</plugin>
 
-			<plugin>
+<!-- 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>rpm-maven-plugin</artifactId>
 				<version>2.2.0</version>
@@ -121,7 +121,7 @@
 				</executions>
 
 				<configuration>
-					<!-- <license>GPL (c) 2005, SWWDC</license> -->
+					<license>GPL (c) 2005, SWWDC</license>
 					<distribution>MandeDev maliclothing WS</distribution>
 					<group>Application/WS</group>
 
@@ -158,7 +158,7 @@
 					</preinstallScriptlet>
 
 				</configuration>
-			</plugin>
+			</plugin> -->
 
 		</plugins>
 	</build>
