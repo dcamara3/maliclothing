@@ -57,7 +57,7 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>3.5</version>
+			<!-- <version>3.5</version> -->
 		</dependency>
 	</dependencies>
 
@@ -105,71 +105,105 @@
 					</execution>
 				</executions>
 			</plugin>
-
-<<<<<<< HEAD
-			<!-- <plugin>
-=======
-<!-- 			<plugin>
->>>>>>> 0becbfdf708fb699846e8d2977c44d44fc426074
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>rpm-maven-plugin</artifactId>
-				<version>2.2.0</version>
-				<executions>
-					<execution>
-						<id>generate-rpm</id>
-						<phase>package</phase>
-						<goals>
-							<goal>rpm</goal>
-						</goals>
-					</execution>
-				</executions>
-
-				<configuration>
-					<license>GPL (c) 2005, SWWDC</license>
-					<distribution>MandeDev maliclothing WS</distribution>
-					<group>Application/WS</group>
-
-					<mappings>
-
-						<mapping>
-							<directory>/opt/tomcat/maliclothing</directory>
-							<dirmode>755</dirmode>
-						</mapping>
-
-						<mapping>
-							<directory>/opt/tomcat/maliclothing</directory>
-							<filemode>755</filemode>
-							<sources>
-								<source>
-									<location>target/maliclothing.jar</location>
-								</source>
-							</sources>
-						</mapping>
-
-						<mapping>
-							<directory>/etc/systemd/system</directory>
-							<filemode>755</filemode>
-							<sources>
-								<source>
-									<location>scripts/maliclothing.service</location>
-								</source>
-							</sources>
-						</mapping>
-
-					</mappings>
-					<preinstallScriptlet>
-						<script>echo "installing ${project.name} now"</script>
-					</preinstallScriptlet>
-
-				</configuration>
-<<<<<<< HEAD
-			</plugin>
- -->
-=======
-			</plugin> -->
-
->>>>>>> 0becbfdf708fb699846e8d2977c44d44fc426074
 		</plugins>
 	</build>
 
+	<profiles>
+		<profile>
+			<activation>
+				<property>
+					<name>environment</name>
+					<value>build-rpm</value>
+				</property>
+			</activation>
+
+			<build>
+				<finalName>maliclothing</finalName>
+				<plugins>
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+					</plugin>
+
+					<plugin>
+						<groupId>com.mysema.maven</groupId>
+						<artifactId>apt-maven-plugin</artifactId>
+						<version>1.0.8</version>
+						<dependencies>
+							<dependency>
+								<groupId>com.querydsl</groupId>
+								<artifactId>querydsl-apt</artifactId>
+								<version>${querydsl.version}</version>
+							</dependency>
+						</dependencies>
+						<executions>
+							<execution>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>process</goal>
+								</goals>
+								<configuration>
+									<outputDirectory>target/generated-sources</outputDirectory>
+									<processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>rpm-maven-plugin</artifactId>
+						<version>2.2.0</version>
+						<executions>
+							<execution>
+								<id>generate-rpm</id>
+								<phase>package</phase>
+								<goals>
+									<goal>rpm</goal>
+								</goals>
+							</execution>
+						</executions>
+
+						<configuration>
+							<license>GPL (c) 2005, SWWDC</license>
+							<distribution>MandeDev maliclothing WS</distribution>
+							<group>Application/WS</group>
+
+							<mappings>
+
+								<mapping>
+									<directory>/opt/tomcat/maliclothing</directory>
+									<dirmode>755</dirmode>
+								</mapping>
+
+								<mapping>
+									<directory>/opt/tomcat/maliclothing</directory>
+									<filemode>755</filemode>
+									<sources>
+										<source>
+											<location>target/maliclothing.jar</location>
+										</source>
+									</sources>
+								</mapping>
+
+								<mapping>
+									<directory>/etc/systemd/system</directory>
+									<filemode>755</filemode>
+									<sources>
+										<source>
+											<location>scripts/maliclothing.service</location>
+										</source>
+									</sources>
+								</mapping>
+
+							</mappings>
+							<preinstallScriptlet>
+								<script>echo "installing ${project.name} now"</script>
+							</preinstallScriptlet>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>

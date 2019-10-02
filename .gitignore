@@ -46,3 +46,7 @@ maliclothing-ui/dist/
 .idea/*
 
 .vscode
+
+*.iml
+maliclothing-ui/*.iml
+maliclothing-ws/*.iml
