@@ -7,27 +7,28 @@
   <!-- https://www.metaltoad.com/blog/angular-5-making-api-calls-httpclient-service -->
   <div class="container text-center">
 
-    <div *ngFor="let product of products" class="row text-center" id="imgRow">
+ <div class="row text-center" id="imgRow">
+    <div *ngFor="let product of products" class="col-md-3 col-sm-6">
 
       <div>
         <div class="thumbnail">
           <img src="assets/images/{{product.upcCode}}.jpg">
           <div class="caption">
-            <h4>{{product.name}} - <span>$ {{product.price}}</span> </h4>
+            <small>{{product.name}} - <span>$ {{product.price}}</span> </small>
           </div>
           <div class="row">
             <div class="col-xs-3">
-              <button class="btn btn-success custom-button" (click)="addToCart(product)">Add To Cart</button>
+              <button class="btn btn-success btn btn-sm" id = "btn" (click)="addToCart(product)">Add To Cart</button>
             </div>
             <div class="col-xs-9">
-              <button class="btn btn-danger custom-button" (click)="removeFromCart(product)">Remove From Cart</button>
+              <button class="btn btn-danger btn btn-sm" id= "btn" (click)="removeFromCart(product)">Remove From Cart</button>
             </div>
           </div>
         </div>
       </div>
-
+    </div>
     </div>
 
-  </div>
+ 
 
 <!-- </app-layout> -->
