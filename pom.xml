@@ -9,7 +9,51 @@
 
 	<packaging>pom</packaging>
 	<name>maliclothing</name>
-	<description>a project for an employment focused website</description>
+	<description>A project for an online clothing store website</description>
+
+	<url>http://maven.apache.org/maliclothing</url>
+
+	<organization>
+		<name>Org name</name>
+		<url>http://www.theorgname.com</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<id>Youssouf</id>
+			<name>Youssouf D</name>
+			<email>emailaddress@gmail.com</email>
+			<organization>Org Name</organization>
+			<roles>
+				<role>Developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>Daman</id>
+			<name>Daman C</name>
+			<email>emailaddress@gmail.com</email>
+			<organization>Org Name</organization>
+			<roles>
+				<role>Developer</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:http://maliclothing.github.com/maliclothing.git</connection>
+		<developerConnection>scm:git:http://maliclothing.github.com/maliclothing.git</developerConnection>
+		<url>scm:git:http://maliclothing.github.com/maliclothing.git</url>
+	</scm>
+
+	<issueManagement>
+		<system>Jira</system>
+		<url>http://jira/jira</url>
+	</issueManagement>
+
+	<ciManagement>
+		<system>Jenkins</system>
+		<url>http://mande-dev.com:8080</url>
+	</ciManagement>
 
 	<modules>
 		<module>maliclothing-ws</module>
