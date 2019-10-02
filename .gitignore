@@ -44,3 +44,5 @@ maliclothing-ui/dist/
 .attach_pid*
 
 .idea/*
+
+.vscode

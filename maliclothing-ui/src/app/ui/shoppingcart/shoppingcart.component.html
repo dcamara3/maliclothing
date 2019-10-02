@@ -1,7 +1,5 @@
-<app-header></app-header>
+<app-layout>
 
-<div class="container">
-	
 	<h2 class="jumbotron text-center">Shopping Cart Content</h2>
 
 	<div *ngIf="_shoppingCartService.numberOfItems == 0">
@@ -11,22 +9,22 @@
 	<div *ngIf="_shoppingCartService.numberOfItems > 0">
 
 		<div *ngFor="let item of _shoppingCartService.items | keyvalue" class="row text-center">
-		  <div>
-		    <div class="thumbnail">
-		      <img src="assets/images/{{item.value[0].upcCode}}.jpg">
-		      <div class="caption">
-		        <h4>{{item.value[0].name}} ({{item.value.length}}) : $ {{item.value[0].price * item.value.length }} </h4>
-		      </div>
-		<!--       <div class="row">
+			<div>
+				<div class="thumbnail">
+					<img src="assets/images/{{item.value[0].upcCode}}.jpg">
+					<div class="caption">
+						<h4>{{item.value[0].name}} ({{item.value.length}}) : $ {{item.value[0].price * item.value.length }} </h4>
+					</div>
+					<!--       <div class="row">
 		        <div class="col-xs-9">
 		          <button class="btn btn-danger custom-button" (click)="removeFromCart({{item.value[0]}})">Remove</button>
 		        </div>
 		      </div> -->
-		    </div>
-		  </div>
+				</div>
+			</div>
 		</div>
 		<button class="btn btn-success" (click)="checkout()">Checkout</button>
-	
+
 	</div>
 
-</div>
+</app-layout>
