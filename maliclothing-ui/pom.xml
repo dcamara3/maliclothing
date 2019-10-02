@@ -14,8 +14,12 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
+<<<<<<< HEAD
 	<build>
 		
 	</build>
+=======
+	<!-- https://www.mojohaus.org/rpm-maven-plugin/example1.html -->
+>>>>>>> 0becbfdf708fb699846e8d2977c44d44fc426074
 
 </project>
