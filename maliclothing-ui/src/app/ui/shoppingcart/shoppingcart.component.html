@@ -9,7 +9,7 @@
 	<div *ngIf="_shoppingCartService.numberOfItems > 0">
 
 		<div *ngFor="let item of _shoppingCartService.items | keyvalue" class="row text-center">
-			<div>
+			<div *ngIf= "item.value[0] != null">
 				<div class="thumbnail">
 					<img src="assets/images/{{item.value[0].upcCode}}.jpg">
 					<div class="caption">

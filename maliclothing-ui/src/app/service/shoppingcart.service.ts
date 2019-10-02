@@ -5,9 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class ShoppingCartService {
 
- public items = {};
- public numberOfItems: number = 0;
- public totalprice : number = 0;
+  public items = {};
+  public numberOfItems = 0;
+  public totalprice = 0;
 
   constructor() { }
 
@@ -15,7 +15,7 @@ export class ShoppingCartService {
     return this.numberOfItems;
   }
 
-  public addItem(item : any): void {
+  public addItem(item: any): void {
     if (this.items[item.upcCode] == null) {
       this.items[item.upcCode] = [];
     }
@@ -23,29 +23,26 @@ export class ShoppingCartService {
     this.numberOfItems++;
   }
 
-  public deleteItem(upcCode : string): void 
-  {
+  public deleteItem(upcCode: string): void {
     if (this.items[upcCode] != null) {
-      if ( this.items[upcCode].length > 0) {
+      if (this.items[upcCode].length > 0) {
         this.items[upcCode].splice(0, 1);
         this.numberOfItems--;
       }
     }
   }
 
-  public getItems() : any {
+  public getItems(): any {
     return this.items;
   }
 
-  public getTotalAmount() : number {
+  public getTotalAmount(): number {
     this.totalprice = 0;
-    for(let key in this.items){
-      for(let keyitem in this.items[key]){
-
-         this.totalprice += this.items[key][keyitem].price;
-
-      }      
+    for (let key in this.items) {
+      for (let keyitem in this.items[key]) {
+        this.totalprice += this.items[key][keyitem].price;
+      }
     }
-    return this.totalprice ;
+    return this.totalprice;
   }
 }
