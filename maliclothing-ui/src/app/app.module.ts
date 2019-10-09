@@ -10,6 +10,9 @@ import { FormsModule } from '@angular/forms';
 import { ProductService } from './service/product.service';
 import { UiModule } from './ui/ui.module';   // our custom service, see below
 import { ShoppingCartService } from './service/shoppingcart.service';
+import {ShoppingCartModule} from 'ng-shopping-cart'; // <-- Import the module class
+import { Product } from './model/product';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,15 @@ import { ShoppingCartService } from './service/shoppingcart.service';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    UiModule
+    UiModule,
+    ShoppingCartModule.forRoot({ // <-- Add the cart module to your root module
+      itemType: Product, // <-- Configuration is optional
+      serviceType: 'localStorage',
+      serviceOptions: {
+        storageKey: 'NgShoppingCart',
+        clearOnError: true
+      }
+    }), 
   ],
   providers: [ProductService, ShoppingCartService],
 

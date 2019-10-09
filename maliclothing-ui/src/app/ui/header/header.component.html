@@ -7,7 +7,7 @@
 			<a class="nav-item nav-link" [routerLink]="'/cart'">
 				View Cart 
 				<span id="shoppingCart">
-					( {{_shoppingCartService.getCount()}} item(s) ) : $ {{_shoppingCartService.getTotalAmount()}} 
+					( {{_cartService.itemCount()}} item(s) ) : $ {{_cartService.totalCost()}} 
 				</span> 
 			</a>
 

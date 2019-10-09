@@ -8,10 +8,13 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './../app-routing.module';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 
+import { ShoppingCartModule } from 'ng-shopping-cart';
+
 @NgModule({
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ShoppingCartModule
   ],
   declarations: [LayoutComponent, HeaderComponent, FooterComponent, HomeComponent, ShoppingcartComponent],
   exports: [LayoutComponent]

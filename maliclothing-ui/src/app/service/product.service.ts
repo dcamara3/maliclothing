@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs'
 
 import { environment } from '../../environments/environment';
+import { Product } from '../model/product';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -17,7 +18,7 @@ export class ProductService {
 
     constructor(private http: HttpClient) { }
 
-    getProducts(): any {
-        return this.http.get(this.env.productWebWServiceUrl);
+    getProducts(): Observable<Product[]> {
+        return this.http.get<Product[]>(this.env.productWebWServiceUrl);
     }
 }

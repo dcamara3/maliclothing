@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ProductService } from './../../service/product.service';
 import { ShoppingCartService } from './../../service/shoppingcart.service';
+import { Product } from 'src/app/model/product';
+import { CartService, CartItem } from 'ng-shopping-cart';
 
 @Component({
   selector: 'app-home',
@@ -13,11 +15,12 @@ import { ShoppingCartService } from './../../service/shoppingcart.service';
 })
 export class HomeComponent {
 
-  public products;
+  public products: Product[];
 
   constructor(
-  		private _productService: ProductService, 
-  		private _shoppingCartService: ShoppingCartService
+    private _productService: ProductService,
+    private _shoppingCartService: ShoppingCartService,
+    private cartService: CartService<Product>
   ) { }
 
   ngOnInit() {
@@ -26,17 +29,23 @@ export class HomeComponent {
 
   getProducts() {
     this._productService.getProducts().subscribe(
-      data => { this.products = data },
+      data => { this.products = data; },
       err => console.error(err),
       () => console.log('done loading products')
     );
   }
 
-  public addToCart(product: any): void {
-    this._shoppingCartService.addItem(product);
+  public addToCart(product: Product): void {
+    var tmpProduct = new Product(product);
+    tmpProduct.setQuantity(1);
+    //this._shoppingCartService.addItem(product);
+    this.cartService.addItem(tmpProduct);
   }
 
-  public removeFromCart(product: any): void {
-    this._shoppingCartService.deleteItem(product.upcCode);
+  public removeFromCart(product: Product): void {
+    var tmpProduct = new Product(product);
+    tmpProduct.setQuantity(1);
+    // this._shoppingCartService.deleteItem(product.upcCode);
+    this.cartService.removeItem(tmpProduct.getId());
   }
 }
