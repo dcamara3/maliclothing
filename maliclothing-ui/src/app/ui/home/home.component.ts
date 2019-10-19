@@ -5,8 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ProductService } from './../../service/product.service';
 import { ShoppingCartService } from './../../service/shoppingcart.service';
-import { Product } from 'src/app/model/product';
 import { CartService, CartItem } from 'ng-shopping-cart';
+import { Product } from 'src/app/model/product.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,37 +16,41 @@ import { CartService, CartItem } from 'ng-shopping-cart';
 })
 export class HomeComponent {
 
-  public products: Product[];
+  public products: any = [];
+  public dropDownValues = [];
 
   constructor(
     private _productService: ProductService,
-    private _shoppingCartService: ShoppingCartService,
-    private cartService: CartService<Product>
+    private _cartService: CartService<Product>,
+    private _router: Router
   ) { }
 
   ngOnInit() {
     this.getProducts();
+    this._cartService.setTaxRate(5);
+    this._cartService.onItemAdded.subscribe(addedItem => {
+      console.log(addedItem);
+      this._router.navigate(['/', 'cart']);
+    });
+
+    this.dropDownValues = [
+      { label: 'One item', value: 1 },
+      { label: 'Two items', value: 2 }
+    ];
+    this.dropDownValues = this.initQuantityDropdownValues(31);
+    // console.log(this.dropDownValues);
   }
 
   getProducts() {
-    this._productService.getProducts().subscribe(
-      data => { this.products = data; },
-      err => console.error(err),
-      () => console.log('done loading products')
-    );
+    this._productService.getProducts().subscribe(data => {
+      for (const entry of (data)) {
+        this.products.push(new Product(entry));
+      }
+    });
   }
 
-  public addToCart(product: Product): void {
-    var tmpProduct = new Product(product);
-    tmpProduct.setQuantity(1);
-    //this._shoppingCartService.addItem(product);
-    this.cartService.addItem(tmpProduct);
-  }
-
-  public removeFromCart(product: Product): void {
-    var tmpProduct = new Product(product);
-    tmpProduct.setQuantity(1);
-    // this._shoppingCartService.deleteItem(product.upcCode);
-    this.cartService.removeItem(tmpProduct.getId());
+  private initQuantityDropdownValues(n) {
+    const arr = Array.apply(null, Array(n));
+    return arr.map(function (x, i) { return { "label": i, "value": i } });
   }
 }

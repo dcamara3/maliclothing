@@ -1,4 +1,11 @@
-#shoppingCart {
-	color: white;
+#shoppingcartCount {
+	color: red;
 	font-weight: bold;
+	font-size: 1.2 em;
+	margin-left: -35px;
+}
+
+#shoppingartLogo {
+	height: 60px;
+	width: 100px;
 }

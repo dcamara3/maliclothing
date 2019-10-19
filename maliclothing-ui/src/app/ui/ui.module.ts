@@ -9,6 +9,7 @@ import { AppRoutingModule } from './../app-routing.module';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 
 import { ShoppingCartModule } from 'ng-shopping-cart';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import { ShoppingCartModule } from 'ng-shopping-cart';
     AppRoutingModule,
     ShoppingCartModule
   ],
-  declarations: [LayoutComponent, HeaderComponent, FooterComponent, HomeComponent, ShoppingcartComponent],
+  declarations: [LayoutComponent, HeaderComponent, FooterComponent, HomeComponent, ShoppingcartComponent, NotfoundComponent],
   exports: [LayoutComponent]
 })
 export class UiModule { }

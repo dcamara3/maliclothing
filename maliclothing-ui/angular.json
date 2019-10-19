@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/ng-shopping-cart/styles/css/ng-shopping-cart.css",
               "src/styles.css"
             ],
             "scripts": []

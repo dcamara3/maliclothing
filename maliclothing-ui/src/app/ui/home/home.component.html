@@ -1,8 +1,8 @@
 <app-layout>
 
-  <div class="jumbotron text-center">
-    <h1>Mali Clothing</h1>
-  </div>
+  <!-- <div class="jumbotron text-center">
+    <h1>Djago</h1>
+  </div> -->
 
   <div class="row text-center" id="imgRow">
 
@@ -15,15 +15,7 @@
           <small>{{product.name}} - <span>$ {{product.price}}</span> </small>
         </div>
 
-        <div class="row">
-          <div class="col-xs-3">
-            <button class="btn btn-success btn btn-sm" id="btn" (click)="addToCart(product)">Add To Cart</button>
-          </div>
-          <div class="col-xs-9">
-            <button class="btn btn-danger btn btn-sm" id="btn" (click)="removeFromCart(product)">Remove From
-              Cart</button>
-          </div>
-        </div>
+        <add-to-cart [item]="product" [type]="'dropdown'" [dropdown]="dropDownValues"></add-to-cart>
 
       </div>
 

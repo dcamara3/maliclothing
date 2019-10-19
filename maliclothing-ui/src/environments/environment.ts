@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  taxRate: 5,
   productWebWServiceUrl: 'http://localhost:8081/maliclothing/product/all/'
 };
 

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoppingCartService } from './../../service/shoppingcart.service';
-import { Product } from 'src/app/model/product';
 import { CartService } from 'ng-shopping-cart';
+import { Product } from 'src/app/model/product.model';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-shoppingcart',
@@ -10,16 +11,12 @@ import { CartService } from 'ng-shopping-cart';
 })
 export class ShoppingcartComponent implements OnInit {
 
-  constructor(
-    public _shoppingCartService: ShoppingCartService,
-    public _cartService: CartService<Product>) { }
+  env = environment;
+
+  constructor(private _cartService: CartService<Product>) { }
 
   ngOnInit() {
-
-    for (let item of this._cartService.getItems()) {
-      console.log(item);
-    }
-
+    this._cartService.setTaxRate(this.env.taxRate);
   }
 
   checkout(): void {

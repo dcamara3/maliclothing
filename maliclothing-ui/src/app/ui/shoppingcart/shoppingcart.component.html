@@ -2,29 +2,11 @@
 
 	<h2 class="jumbotron text-center">Shopping Cart Content</h2>
 
-	<div *ngIf="_cartService.itemCount() == 0">
-		<h2>No Items in Shopping Cart!</h2>
-	</div>
+	<cart-view [display]="'responsive'">
+	</cart-view>
 
-	<div *ngIf="_cartService.itemCount() > 0">
-
-		<div *ngFor="let item of _cartService.getItems()" class="row text-center">
-			<div *ngIf= "item != null">
-				<div class="thumbnail">
-					<img src="assets/images/{{item.getId()}}.jpg">
-					<div class="caption">
-						<h4>{{item.getName()}} ({{item.getQuantity()}}) : $ {{item.total() }} </h4>
-					</div>
-					<!--       <div class="row">
-		        <div class="col-xs-9">
-		          <button class="btn btn-danger custom-button" (click)="removeFromCart({{item.value[0]}})">Remove</button>
-		        </div>
-		      </div> -->
-				</div>
-			</div>
-		</div>
-		<button class="btn btn-success" (click)="checkout()">Checkout</button>
-
-	</div>
+	<cart-checkout [custom]="true">
+		<button type="button" class="cart-checkout-button">Do checkout</button>
+	</cart-checkout>
 
 </app-layout>

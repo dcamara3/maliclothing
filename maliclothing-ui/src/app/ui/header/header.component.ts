@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoppingCartService } from './../../service/shoppingcart.service';
-import { Product } from 'src/app/model/product';
+import { Product } from 'src/app/model/product.model';
 import { CartService } from 'ng-shopping-cart';
 
 @Component({
@@ -10,9 +10,7 @@ import { CartService } from 'ng-shopping-cart';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(
-    public _shoppingCartService: ShoppingCartService,
-    public _cartService: CartService<Product>) { }
+  constructor(public _cartService: CartService<Product>) { }
 
   ngOnInit() {
 
